@@ -5,4 +5,7 @@ let staticCommands = {
   server: new Server()
 };
 
-let relution = new Relution(staticCommands);
+if (process.argv[2] === 'relution') {
+  let relution = new Relution(staticCommands);
+}
+

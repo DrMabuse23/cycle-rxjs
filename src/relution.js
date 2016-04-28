@@ -5,11 +5,12 @@ export class Relution extends Command {
     super('relution');
     this.staticCommands = staticCommands;
     this.commandDispatcher.subscribe(this.init.bind(this));
+    this.args = [];
+    this.reserved = ['help', 'quit'];
   }
 
   init(args) {
     super.init(args);
-
     Object.keys(this.staticCommands).forEach((command) => {
       if (this.staticCommands[command].name === args[1]) {
         if (!this.staticCommands[command].init) {
@@ -20,6 +21,5 @@ export class Relution extends Command {
         this.staticCommands[command].init(subargs);
       }
     });
-
   }
 }
