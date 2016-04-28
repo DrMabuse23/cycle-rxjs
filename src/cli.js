@@ -1,5 +1,8 @@
 import {Server} from './server';
 import {Relution} from './relution';
 
-let server = new Server();
-let relution = new Relution();
+let staticCommands = {
+  server: new Server()
+};
+
+let relution = new Relution(staticCommands);
